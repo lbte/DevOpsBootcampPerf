@@ -5,6 +5,11 @@
 	<artifactId>project2-devops-unittests</artifactId>
 	<version>1.0</version>
 
+	<properties>
+		<sonar.organization>lbte93</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
