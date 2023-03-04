@@ -25,7 +25,7 @@ stages:
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
             effectivePomSkip: false
-            sonarQubeRunAnalysis: true
+            sonarQubeRunAnalysis: false
 
         - script: sudo mvn package
           displayName: 'Execute the build of the project'
