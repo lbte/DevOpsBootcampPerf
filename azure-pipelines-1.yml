@@ -28,5 +28,11 @@ stages:
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
 
-        - script: sudo mvn package
-          displayName: 'Execute the build of the project'
+        #- script: mvn package
+        #  displayName: 'Execute the build of the project'
+        
+        - script: pwd
+          displayName: 'Check current directory'
+          
+        - script: ls
+          displayName: 'Show files in the current directory'
