@@ -28,5 +28,5 @@ stages:
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
 
-        #- script: sudo mvn package
-        #  displayName: 'Execute the build of the project'
+        - script: sudo mvn package
+          displayName: 'Execute the build of the project'
