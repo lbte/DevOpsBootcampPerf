@@ -14,23 +14,19 @@ stages:
     jobs:
       - job:
         steps:
-        - script: cd Project
-          displayName: 'Go inside the Project directory'
-          
         - task: Maven@4
           inputs:
-            mavenPomFile: 'Project/pom.xml'
+            mavenPomFile: '$(System.DefaultWorkingDirectory)/Project/pom.xml'
             publishJUnitResults: true
-            testRunTitle: 'Project/src/test/java/CalculatorTest.java'
+            testRunTitle: '$(System.DefaultWorkingDirectory)/Project/src/test/java/CalculatorTest.java'
             javaHomeOption: 'JDKVersion'
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
-            
-        - script: cd Project
-          displayName: 'Go inside the Project directory'
 
-        - script: mvn package
-          displayName: 'Execute the build of the project'
+        - script: |
+            cd Project
+            mvn package
+          displayName: 'Go inside the Project directory and execute the build of the project'
         
