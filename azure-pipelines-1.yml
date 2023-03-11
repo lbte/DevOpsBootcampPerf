@@ -20,12 +20,13 @@ stages:
         - task: Maven@4
           inputs:
             mavenPomFile: 'Project/pom.xml'
-            publishJUnitResults: false
+            publishJUnitResults: true
+            testRunTitle: 'Project/src/test/java/CalculatorTest.java'
             javaHomeOption: 'JDKVersion'
             mavenVersionOption: 'Default'
             mavenAuthenticateFeed: false
             effectivePomSkip: false
             sonarQubeRunAnalysis: false
 
-        - script: sudo mvn package
-          displayName: 'Execute the build of the project'
+        #- script: sudo mvn package
+        #  displayName: 'Execute the build of the project'
