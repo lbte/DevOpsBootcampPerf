@@ -5,6 +5,20 @@
 	<artifactId>project2-devops-unittests</artifactId>
 	<version>1.0</version>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -18,25 +32,28 @@
 			<version>2.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- 
+<!-- 
 		<dependency>
 			<groupId>org.sonarsource.scanner.maven</groupId>
 			<artifactId>sonar-maven-plugin</artifactId>
 			<version>3.2</version>
 		</dependency>
-	
+	</dependencies>
 	<profiles>
 		<profile>
 			<id>sonar</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
+			<properties>
+				<sonar.host.url>https://localhost:9000</sonar.host.url>
+			</properties>
 		</profile>
 	</profiles>
--->
+	-->
 	</dependencies>
+
 	<properties>
-		<sonar.organization>lbte93</sonar.organization>
 		<sonar.host.url>https://localhost:9000</sonar.host.url>
 	</properties>
 </project>
